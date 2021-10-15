@@ -1,5 +1,21 @@
-<h1>Lists</h1>
-<ul>
-  <%# <%= @lists.each do |list| %> %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <div><h3>Save any kind of music</h3></div>
+  <div><p>Classic</p></div>
+</div>
 
-</ul>
+<div class='bar-addmovie'>
+  <span>My Lists</span>
+  <%= link_to "New List", new_list_path, class: "btn btn-flat" %>
+</div>
+
+<div class='cards'>
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <div class='card'>
+          <%= list.name %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
